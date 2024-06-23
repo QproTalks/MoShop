@@ -1,0 +1,199 @@
+/* Standaard reset van marges en padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling voor de banner */
+.banner {
+    background-color: #ccc;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.sale {
+    background-color: #faa;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.gray-text {
+    color: #bbb;
+}
+
+/* product */
+
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Ruimte tussen producten */
+}
+
+.product {
+    width: calc(33.33% - 20px); /* Elke product neemt 25% van de ruimte in met 20px tussenruimte */
+    padding: 20px;
+    border: 1px solid #faa;
+    text-align: center;
+}
+
+.product .title {
+    margin-bottom: 10px;
+}
+
+.product .weight {
+    margin-bottom: 5px;
+}
+
+.product .add-to-cart {
+    margin-bottom: 25px;
+}
+
+.product img {
+    max-width: 35%; /* Verminder de breedte van de afbeelding voor een betere layout */
+}
+
+.product h2 {
+    margin-bottom: -100px;
+}
+
+.product .price {
+    color: #000; /* Kleur voor doorgehaalde prijs */
+    margin-bottom: 25px;
+}
+
+.product button {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #0056b3;
+}
+
+/* saleproduct */
+
+.saleproduct {
+    width: calc(33.33% - 20px); /* Elke product neemt 25% van de ruimte in met 20px tussenruimte */
+    padding: 20px;
+    border: 1px solid #faa;
+    text-align: center;
+}
+
+.saleproduct .title {
+    margin-bottom: 10px;
+}
+
+.saleproduct .weight {
+    margin-bottom: 5px;
+}
+
+.saleproduct .add-to-cart {
+    margin-bottom: 25px;
+}
+
+.saleproduct img {
+    max-width: 35%; /* Verminder de breedte van de afbeelding voor een betere layout */
+}
+
+.saleproduct h2 {
+    margin-bottom: -100px;
+}
+
+.saleproduct .original-price {
+    color: #888; /* Kleur voor doorgehaalde prijs */
+    text-decoration: line-through; /* Doorhalen van de originele prijs */
+}
+
+.saleproduct .price {
+    color: red; /* Kleur voor de echte prijs */
+}
+
+.saleproduct button {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.saleproduct button:hover {
+    background-color: #0056b3;
+}
+
+/* deal */
+.deal {
+    width: calc(100% - 20px); /* Elke product neemt 25% van de ruimte in met 20px tussenruimte */
+    padding: 20px;
+    border: 1px solid #faa;
+    text-align: center;
+}
+
+.deal .title {
+    margin-bottom: 10px;
+}
+
+.deal .weight {
+    margin-bottom: 5px;
+}
+
+.deal .add-to-cart {
+    margin-bottom: 25px;
+}
+
+.deal img {
+    max-width: 10%; /* Verminder de breedte van de afbeelding voor een betere layout */
+}
+
+.deal h2 {
+    margin-bottom: -100px;
+}
+
+.deal .original-price {
+    color: #888; /* Kleur voor doorgehaalde prijs */
+    text-decoration: line-through; /* Doorhalen van de originele prijs */
+}
+
+.deal .price {
+    color: red; /* Kleur voor de echte prijs */
+}
+
+.deal button {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.deal button:hover {
+    background-color: #0056b3;
+}
+
+/* Vrolijk lettertype van Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+/* Body-lettertype instellen */
+body {
+    font-family: 'Indie Flower', cursive;
+}
+
+/* Productknoppen en knoppen met vrolijk lettertype */
+.saleproduct h2,
+.product h2,
+.afrekenen,
+.deal button,
+.saleproduct button,
+.product button {
+    font-family: 'Indie Flower', cursive;
+}
