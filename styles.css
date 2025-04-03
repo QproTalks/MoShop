@@ -180,11 +180,11 @@
     background-color: #0056b3;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 /* Body-lettertype instellen */
 body {
-    font-family: 'Fredoka One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Productknoppen en knoppen met vrolijk lettertype */
@@ -194,7 +194,7 @@ body {
 .deal button,
 .saleproduct button,
 .product button {
-    font-family: 'Fredoka One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 /* Vrolijk lettertype van Google Fonts */
 
