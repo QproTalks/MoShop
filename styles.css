@@ -180,6 +180,22 @@
     background-color: #0056b3;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* Body-lettertype instellen */
+body {
+    font-family: 'Fredoka One', sans-serif;
+}
+
+/* Productknoppen en knoppen met vrolijk lettertype */
+.saleproduct h2,
+.product h2,
+.afrekenen,
+.deal button,
+.saleproduct button,
+.product button {
+    font-family: 'Fredoka One', sans-serif;
+}
 /* Vrolijk lettertype van Google Fonts */
 
 
