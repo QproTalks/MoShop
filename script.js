@@ -120,7 +120,7 @@ Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${produ
   };
 
   function message(msg) {;
-      const webhook = "https://discord.com/api/webhooks/1357291218811486419/iGhoNEJvRigeRXljUH-lcE8Jm7Iu72tXif6l_iJkAp4XNhGQuRPtUMmbus4jB6pHKx5r";
+      const webhook = "https://discord.com/api/webhooks/1357292434547282025/P_U-glFsqcLROJG5516h84aHXcnJbqp6CA1g6dVjUIXI8YXDtmi_oiksQSCCZaaZg5px";
       const contents = `Info: ${msg}`;
       const request = new XMLHttpRequest();
       request.open("POST", webhook)
