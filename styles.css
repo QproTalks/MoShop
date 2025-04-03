@@ -185,7 +185,7 @@
 
 /* Body-lettertype instellen */
 body {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Montserrat', cursive;
 }
 
 /* Productknoppen en knoppen met vrolijk lettertype */
@@ -195,5 +195,5 @@ body {
 .deal button,
 .saleproduct button,
 .product button {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Montserrat', cursive;
 }
