@@ -32,37 +32,33 @@ document.addEventListener('DOMContentLoaded', function() {
   checkoutButton.addEventListener('click', () => {
   let totalPrice = 0;
   let noDiscountPrice = 0;
-  let productString = |;
+  let productString = "|";
   let totalWeight = 0;
 
   cart.forEach(item => {
       totalPrice += item.price * item.quantity;
       noDiscountPrice += item.originalPrice * item.quantity;
       totalWeight += item.weight * item.quantity;
-      productString += ${item.quantity}x ${item.product}|;
+      productString += `${item.quantity}x ${item.product}|`;
   });
 
   let shippingPrice = determineShippingPrice(totalWeight);
   noDiscountPrice += shippingPrice;
   totalPrice += shippingPrice;
 
-  let info = Subtotal: € ${formatCurrency(noDiscountPrice)},
+  let info = `Subtotal: € ${formatCurrency(noDiscountPrice)},
 Total Discount: € ${formatCurrency(noDiscountPrice - totalPrice)},
 Shipping Price: € ${formatCurrency(shippingPrice)},
 Total Price: € ${formatCurrency(totalPrice)},
-Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${productString};
+Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${productString}`;
 
   if (totalPrice > 0) {
-      alert(Thanks for buying this. ${info});
+      alert(`Thanks for buying this. ${info}`);
   }
 
-  message(info)
-
-  // Leeg de winkelwagen
   cart = [];
   updateCart();
 });
-
 
   // Functie om de winkelwagen bij te werken
   function updateCart() {
