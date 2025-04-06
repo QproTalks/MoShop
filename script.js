@@ -94,12 +94,13 @@ Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${produ
       const tax = formatCurrency((totalPrice - shippingPrice) * 0.21);
       const shipping = formatCurrency(shippingPrice);
       // Bijwerken van tekst in plaats van een alert
-      cartTotal.innerHTML = 
-      <p class="gray-text">Subtotal: € ${subtotal}</p>
-      <p class="gray-text">Total Discount: € ${discount}</p>
-      <p class="gray-text">Total Price: € ${total}</p>
-      <p class="gray-text">Including € ${tax} Tax + Shipping: € ${shipping}</p>
-  ;
+      cartTotal.innerHTML = `
+  <p class="gray-text">Subtotal: € ${subtotal}</p>
+  <p class="gray-text">Total Discount: € ${discount}</p>
+  <p class="gray-text">Total Price: € ${total}</p>
+  <p class="gray-text">Including € ${tax} Tax + Shipping: € ${shipping}</p>
+`;
+
   }
 
   // Functie om valuta op de juiste manier te formatteren
