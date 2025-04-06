@@ -119,6 +119,8 @@ Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${produ
       if (amount > 23000) { return (Math.floor(amount / 23000) * 13.90); }
   };
 
+  message("Testbericht van mijn webshop 🚀");
+
   function message(msg) {
     const webhookURL = "https://discord.com/api/webhooks/...."; // jouw webhook hier
     fetch(webhookURL, {
