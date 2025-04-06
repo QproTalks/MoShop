@@ -125,7 +125,7 @@ Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${produ
     fetch(webhookURL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: msg })  // LET OP: msg zit in een object
+        body: JSON.stringify({ content: boep })  // LET OP: msg zit in een object
     }).then(response => {
         if (response.ok) {
             alert("Order placed! Notification sent to Discord.");
