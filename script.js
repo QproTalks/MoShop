@@ -32,28 +32,28 @@ document.addEventListener('DOMContentLoaded', function() {
   checkoutButton.addEventListener('click', () => {
   let totalPrice = 0;
   let noDiscountPrice = 0;
-  let productString = `|`;
+  let productString = |;
   let totalWeight = 0;
 
   cart.forEach(item => {
       totalPrice += item.price * item.quantity;
       noDiscountPrice += item.originalPrice * item.quantity;
       totalWeight += item.weight * item.quantity;
-      productString += `${item.quantity}x ${item.product}|`;
+      productString += ${item.quantity}x ${item.product}|;
   });
 
   let shippingPrice = determineShippingPrice(totalWeight);
   noDiscountPrice += shippingPrice;
   totalPrice += shippingPrice;
 
-  let info = `Subtotal: € ${formatCurrency(noDiscountPrice)},
+  let info = Subtotal: € ${formatCurrency(noDiscountPrice)},
 Total Discount: € ${formatCurrency(noDiscountPrice - totalPrice)},
 Shipping Price: € ${formatCurrency(shippingPrice)},
 Total Price: € ${formatCurrency(totalPrice)},
-Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${productString}`;
+Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${productString};
 
   if (totalPrice > 0) {
-      alert(`Thanks for buying this. ${info}`);
+      alert(Thanks for buying this. ${info});
   }
 
   message(info)
@@ -80,10 +80,10 @@ Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${produ
           totalWeight += weight * item.quantity;
           const li = document.createElement('li');
           if (tPrice == nDPrice) {
-              li.textContent = `${item.product} - € ${formatCurrency(tPrice * item.quantity)} (${item.quantity}x)`;
+              li.textContent = ${item.product} - € ${formatCurrency(tPrice * item.quantity)} (${item.quantity}x);
           } else {
-              li.textContent = `${item.product} - € ${formatCurrency(tPrice * item.quantity)} (${item.quantity}x)
-      - Korting: € ${formatCurrency((nDPrice - tPrice) * item.quantity)} (${item.quantity}x)`;
+              li.textContent = ${item.product} - € ${formatCurrency(tPrice * item.quantity)} (${item.quantity}x)
+      - Korting: € ${formatCurrency((nDPrice - tPrice) * item.quantity)} (${item.quantity}x);
           }
 
           cartItemsList.appendChild(li);
@@ -98,12 +98,12 @@ Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${produ
       const tax = formatCurrency((totalPrice - shippingPrice) * 0.21);
       const shipping = formatCurrency(shippingPrice);
       // Bijwerken van tekst in plaats van een alert
-      cartTotal.innerHTML = `
+      cartTotal.innerHTML = 
       <p class="gray-text">Subtotal: € ${subtotal}</p>
       <p class="gray-text">Total Discount: € ${discount}</p>
       <p class="gray-text">Total Price: € ${total}</p>
       <p class="gray-text">Including € ${tax} Tax + Shipping: € ${shipping}</p>
-  `;
+  ;
   }
 
   // Functie om valuta op de juiste manier te formatteren
@@ -119,22 +119,24 @@ Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${produ
       if (amount > 23000) { return (Math.floor(amount / 23000) * 13.90); }
   };
 
-  const boep = "Test"
+  function message(msg) {
+            const webhookURL = "https://discord.com/api/webhooks/1357292434547282025/P_U-glFsqcLROJG5516h84aHXcnJbqp6CA1g6dVjUIXI8YXDtmi_oiksQSCCZaaZg5px";
+            fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(msg)
+            }).then(response => {
+                if (response.ok) {
+                    alert("Order placed! Notification sent to Discord.");
+                } else {
+                    alert("Failed to send order notification.");
+                }
+            }).catch(error => {
+                console.error("Error:", error);
+            });
+        }
 
-  function message(boep) {
-  const webhookURL = "https://discord.com/api/webhooks/1357292434547282025/P_U-glFsqcLROJG5516h84aHXcnJbqp6CA1g6dVjUIXI8YXDtmi_oiksQSCCZaaZg5px";
-  fetch(webhookURL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content: boep })
-  }).then(response => {
-      if (response.ok) {
-          alert("Order placed! Notification sent to Discord.");
-      } else {
-          alert("Failed to send order notification.");
-      }
-  }).catch(error => {
-      console.error("Error:", error);
-  });
-}
 
+  // Direct na het laden van de pagina wordt de winkelwagen bijgewerkt
+  updateCart();
+});
