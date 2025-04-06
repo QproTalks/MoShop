@@ -76,10 +76,10 @@ Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${produ
           totalWeight += weight * item.quantity;
           const li = document.createElement('li');
           if (tPrice == nDPrice) {
-              li.textContent = ${item.product} - € ${formatCurrency(tPrice * item.quantity)} (${item.quantity}x);
+              li.textContent = `${item.product} - € ${formatCurrency(tPrice * item.quantity)} (${item.quantity}x)`;
           } else {
-              li.textContent = ${item.product} - € ${formatCurrency(tPrice * item.quantity)} (${item.quantity}x)
-      - Korting: € ${formatCurrency((nDPrice - tPrice) * item.quantity)} (${item.quantity}x);
+              li.textContent = `${item.product} - € ${formatCurrency(tPrice * item.quantity)} (${item.quantity}x)
+      - Korting: € ${formatCurrency((nDPrice - tPrice) * item.quantity)} (${item.quantity}x)`;
           }
 
           cartItemsList.appendChild(li);
