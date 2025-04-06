@@ -120,23 +120,19 @@ Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${produ
   };
 
   function message(msg) {
-            const webhookURL = "https://discord.com/api/webhooks/1357292434547282025/P_U-glFsqcLROJG5516h84aHXcnJbqp6CA1g6dVjUIXI8YXDtmi_oiksQSCCZaaZg5px";
-            fetch(webhookURL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(msg)
-            }).then(response => {
-                if (response.ok) {
-                    alert("Order placed! Notification sent to Discord.");
-                } else {
-                    alert("Failed to send order notification.");
-                }
-            }).catch(error => {
-                console.error("Error:", error);
-            });
+    const webhookURL = "https://discord.com/api/webhooks/...."; // jouw webhook hier
+    fetch(webhookURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ content: msg })  // LET OP: msg zit in een object
+    }).then(response => {
+        if (response.ok) {
+            alert("Order placed! Notification sent to Discord.");
+        } else {
+            alert("Failed to send order notification.");
         }
+    }).catch(error => {
+        console.error("Error:", error);
+    });
+}
 
-
-  // Direct na het laden van de pagina wordt de winkelwagen bijgewerkt
-  updateCart();
-});
