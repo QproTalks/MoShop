@@ -1,203 +1,137 @@
-/* Standaard reset van marges en padding */
+/* Reset & basisstijl */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Styling voor de banner */
-.banner {
-    background-color: #ccc;
-    color: black;
-    text-align: center;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.5;
     padding: 20px;
-    margin-bottom: 20px;
 }
 
-.sale {
-    background-color: #faa;
-    color: black;
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+/* Tekstgrijstint */
 .gray-text {
-    color: #bbb;
+    color: #999;
 }
 
-/* product */
+/* Banner */
+.banner {
+    background-color: #f3f3f3;
+    color: #111;
+    text-align: center;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 10px;
+}
 
+/* Productrijen */
 .product-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Ruimte tussen producten */
+    gap: 20px;
+    justify-content: center;
 }
 
-.product {
-    width: calc(33.33% - 20px); /* Elke product neemt 25% van de ruimte in met 20px tussenruimte */
-    padding: 20px;
-    border: 1px solid #faa;
-    text-align: center;
-}
-
-.product .title {
-    margin-bottom: 10px;
-}
-
-.product .weight {
-    margin-bottom: 5px;
-}
-
-.product .add-to-cart {
-    margin-bottom: 25px;
-}
-
-.product img {
-    max-width: 35%; /* Verminder de breedte van de afbeelding voor een betere layout */
-}
-
-.product h2 {
-    margin-bottom: -100px;
-}
-
-.product .price {
-    color: #000; /* Kleur voor doorgehaalde prijs */
-    margin-bottom: 25px;
-}
-
-.product button {
-    margin-top: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.product button:hover {
-    background-color: #0056b3;
-}
-
-/* saleproduct */
-
-.saleproduct {
-    width: calc(33.33% - 20px); /* Elke product neemt 25% van de ruimte in met 20px tussenruimte */
-    padding: 20px;
-    border: 1px solid #faa;
-    text-align: center;
-}
-
-.saleproduct .title {
-    margin-bottom: 10px;
-}
-
-.saleproduct .weight {
-    margin-bottom: 5px;
-}
-
-.saleproduct .add-to-cart {
-    margin-bottom: 25px;
-}
-
-.saleproduct img {
-    max-width: 35%; /* Verminder de breedte van de afbeelding voor een betere layout */
-}
-
-.saleproduct h2 {
-    margin-bottom: -100px;
-}
-
-.saleproduct .original-price {
-    color: #888; /* Kleur voor doorgehaalde prijs */
-    text-decoration: line-through; /* Doorhalen van de originele prijs */
-}
-
-.saleproduct .price {
-    color: red; /* Kleur voor de echte prijs */
-}
-
-.saleproduct button {
-    margin-top: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.saleproduct button:hover {
-    background-color: #0056b3;
-}
-
-/* deal */
+/* Basisstijl voor elk producttype */
+.product,
+.saleproduct,
 .deal {
-    width: calc(100% - 20px); /* Elke product neemt 25% van de ruimte in met 20px tussenruimte */
-    padding: 20px;
+    flex: 1 1 calc(33.33% - 40px);
     border: 1px solid #faa;
+    padding: 20px;
     text-align: center;
+    border-radius: 10px;
+    background-color: #fff;
+    max-width: 320px;
 }
 
-.deal .title {
+.product img,
+.saleproduct img,
+.deal img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.product h2,
+.saleproduct h2,
+.deal h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
+.product .weight,
+.saleproduct .weight,
 .deal .weight {
-    margin-bottom: 5px;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #555;
 }
 
-.deal .add-to-cart {
-    margin-bottom: 25px;
+.original-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.9rem;
 }
 
-.deal img {
-    max-width: 10%; /* Verminder de breedte van de afbeelding voor een betere layout */
+.price {
+    color: #e60000;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
-.deal h2 {
-    margin-bottom: -100px;
-}
-
-.deal .original-price {
-    color: #888; /* Kleur voor doorgehaalde prijs */
-    text-decoration: line-through; /* Doorhalen van de originele prijs */
-}
-
-.deal .price {
-    color: red; /* Kleur voor de echte prijs */
-}
-
+button.add-to-cart,
+button.afrekenen,
 .deal button {
-    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
     background-color: #007bff;
     color: white;
     border: none;
     padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+button.add-to-cart:hover,
+button.afrekenen:hover,
 .deal button:hover {
     background-color: #0056b3;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-/* Body-lettertype instellen */
-body {
-    font-family: 'Montserrat', 'Fredoka One', sans-serif;
+/* Afrekenen knop */
+#afrekenen {
+    margin-top: 30px;
+    display: block;
+    padding: 12px 30px;
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-
-/* Productknoppen en knoppen met vrolijk lettertype */
-.saleproduct h2,
-.product h2,
-.afrekenen,
-.deal button,
-.saleproduct button,
-.product button {
-    font-family: 'Montserrat', 'Fredoka One', sans-serif;
+/* Responsive */
+@media (max-width: 1000px) {
+    .product,
+    .saleproduct,
+    .deal {
+        flex: 1 1 calc(50% - 40px);
+    }
 }
-/* Vrolijk lettertype van Google Fonts */
 
-
+@media (max-width: 600px) {
+    .product,
+    .saleproduct,
+    .deal {
+        flex: 1 1 100%;
+    }
+}
