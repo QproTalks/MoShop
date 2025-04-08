@@ -13,6 +13,7 @@ body {
     padding: 20px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 /* Tekstgrijstint */
@@ -40,7 +41,8 @@ body {
 
 /* Basisstijl voor elk producttype */
 .product,
-.saleproduct {
+.saleproduct,
+.deal {
     flex: 1 1 calc(33.33% - 40px);
     border: 1px solid #faa;
     padding: 20px;
@@ -50,56 +52,9 @@ body {
     max-width: 320px;
 }
 
-.deal {
-    width: calc(100% - 20px); /* Elke product neemt 25% van de ruimte in met 20px tussenruimte */
-    padding: 20px;
-    border: 1px solid #faa;
-    text-align: center;
-}
-
-.deal .title {
-    margin-bottom: 10px;
-}
-
-.deal .weight {
-    margin-bottom: 5px;
-}
-
-.deal .add-to-cart {
-    margin-bottom: 25px;
-}
-
-.deal img {
-    max-width: 10%; /* Verminder de breedte van de afbeelding voor een betere layout */
-}
-
-.deal h2 {
-    margin-bottom: -100px;
-}
-
-.deal .original-price {
-    color: #888; /* Kleur voor doorgehaalde prijs */
-    text-decoration: line-through; /* Doorhalen van de originele prijs */
-}
-
-.deal .price {
-    color: red; /* Kleur voor de echte prijs */
-}
-
-.deal button {
-    margin-top: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.deal button:hover {
-    background-color: #0056b3;
-}
 .product img,
-.saleproduct img {
+.saleproduct img,
+.deal img {
     max-width: 80%;
     height: auto;
     margin-bottom: 15px;
@@ -107,14 +62,16 @@ body {
 }
 
 .product h2,
-.saleproduct h2 {
+.saleproduct h2,
+.deal h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
 .product .weight,
-.saleproduct .weight {
+.saleproduct .weight,
+.deal .weight {
     font-size: 0.95rem;
     margin-bottom: 10px;
     color: #555;
@@ -134,7 +91,8 @@ body {
 }
 
 button.add-to-cart,
-button.afrekenen {
+button.afrekenen,
+.deal button {
     font-family: 'Montserrat', sans-serif;
     background-color: #007bff;
     color: white;
@@ -147,7 +105,8 @@ button.afrekenen {
 }
 
 button.add-to-cart:hover,
-button.afrekenen:hover {
+button.afrekenen:hover,
+.deal button:hover {
     background-color: #0056b3;
 }
 
@@ -164,14 +123,16 @@ button.afrekenen:hover {
 /* Responsive */
 @media (max-width: 1000px) {
     .product,
-    .saleproduct {
+    .saleproduct,
+    .deal {
         flex: 1 1 calc(50% - 40px);
     }
 }
 
 @media (max-width: 600px) {
     .product,
-    .saleproduct {
+    .saleproduct,
+    .deal {
         flex: 1 1 100%;
     }
 }
