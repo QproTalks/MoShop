@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Deal
     {
       name: "Toki Mochi Deal",
-      image: ["ses.jpg", "rB.jpg", "pea.jpg", "m-mat.jpg", "m-man.jpg", "m-stra.jpg"],
+      image: ["ses.jpg", "rB.jpg", "greT.jpg", "m-choc.jpg", "m-man.jpg", "m-stra.jpg"],
       weight: 870,
       quantity: 6,
-      price: 15.99,
-      originalPrice: 22.34,
+      price: 19.99,
+      originalPrice: 25.44,
       type: "deal"
     }
   ];
