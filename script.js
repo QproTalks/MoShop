@@ -38,17 +38,18 @@ document.addEventListener('DOMContentLoaded', function () {
       div.className = product.originalPrice > product.price ? "saleproduct" : "product";
 
       let images = Array.isArray(product.image)
-        ? product.image.map(img => `<img src="${img}" alt="${product.name}">`).join("")
-        : `<img src="${product.image}" alt="${product.name}">`;
-
+  ? `<div class="deal-images">${product.image.map(img => `<img src="${img}" alt="${product.name}">`).join("")}</div>`
+  : `<img src="${product.image}" alt="${product.name}">`; 
+      
       div.innerHTML = `
-        ${images}
-        <h2 class="title">${product.name}</h2>
-        <h4 class="weight" data-weight="${product.weight}">${product.quantity} pieces (${product.weight}g)</h4>
-        ${product.originalPrice > product.price ? `<h3 class="original-price">€ ${product.originalPrice}</h3>` : ''}
-        <h3 class="price" data-price-eur="${product.price}" data-original-price-eur="${product.originalPrice}">€ ${product.price}</h3>
-        <button class="add-to-cart" data-product="${product.name}">Add to cart</button>
-      `;
+      ${images}
+      <h2 class="title">${product.name}</h2>
+      <h4 class="weight" data-weight="${product.weight}">${product.quantity} pieces (${product.weight}g)</h4>
+      ${product.originalPrice > product.price ? `<h3 class="original-price">€ ${product.originalPrice}</h3>` : ''}
+      <h3 class="price" data-price-eur="${product.price}" data-original-price-eur="${product.originalPrice}">€ ${product.price}</h3>
+      <button class="add-to-cart" data-product="${product.name}">Add to cart</button>
+`;
+
 
       container.appendChild(div);
     });
