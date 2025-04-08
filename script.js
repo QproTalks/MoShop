@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Mini mochi
     { name: "Mini Strawberry Mochi", image: "m-stra.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.49, type: "tmS" },
     { name: "Mini Mango Mochi", image: "m-man.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.49, type: "tmS" },
-    { name: "Mini Chocolate Mochi", image: "m-choc.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 2.99, type: "tmS" },
+    { name: "Mini Chocolate Mochi", image: "m-choc.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.49, type: "tmS" },
 
     // Deal
     {
