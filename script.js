@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       weight: 870,
       quantity: 6,
       price: 19.99,
-      originalPrice: 25.44,
+      originalPrice: 24.94,
       type: "deal"
     }
   ];
