@@ -61,6 +61,20 @@ body {
     border-radius: 8px;
 }
 
+/* Styling voor deal afbeeldingen */
+.deal-images {
+  display: flex;
+  justify-content: space-around; /* Zorgt voor gelijke verdeling tussen de afbeeldingen */
+  gap: 10px; /* Ruimte tussen de afbeeldingen */
+  flex-wrap: wrap; /* Laat afbeeldingen in nieuwe regels springen als er niet genoeg ruimte is */
+}
+
+.deal-images img {
+  max-width: 100px; /* Pas de maximale breedte aan om de afbeeldingen goed naast elkaar te plaatsen */
+  height: auto; /* Zorg ervoor dat de hoogte automatisch wordt aangepast */
+}
+
+
 .product h2,
 .saleproduct h2,
 .deal h2 {
