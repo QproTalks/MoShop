@@ -52,12 +52,24 @@ body {
 }
 
 .product img,
-.saleproduct img,
-.deal img {
+.saleproduct img {
     max-width: 80%;
     height: auto;
     margin-bottom: 15px;
     border-radius: 8px;
+}
+
+.deal-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.deal-images img {
+    max-width: 10%;
+    height: auto;
 }
 
 .product h2,
