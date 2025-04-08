@@ -40,8 +40,7 @@ body {
 
 /* Basisstijl voor elk producttype */
 .product,
-.saleproduct,
-.deal {
+.saleproduct {
     flex: 1 1 calc(33.33% - 40px);
     border: 1px solid #faa;
     padding: 20px;
@@ -51,25 +50,29 @@ body {
     max-width: 320px;
 }
 
+.deal {
+    width: calc(100% - 20px);
+    padding: 20px;
+    border: 1px solid #faa;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Ruimte tussen de afbeeldingen */
+}
+
+
+.deal img {
+    max-width: 10%;
+    height: auto;
+}
+
 .product img,
 .saleproduct img {
     max-width: 80%;
     height: auto;
     margin-bottom: 15px;
     border-radius: 8px;
-}
-
-.deal-images {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.deal-images img {
-    max-width: 10%;
-    height: auto;
 }
 
 .product h2,
