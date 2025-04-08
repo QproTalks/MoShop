@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
   const productData = [
     // Grote mochi
-    { name: "Sesame Mochi", image: "ses.jpg", weight: 210, quantity: 6, price: 4.25, originalPrice: 4.99, type: "tmL" },
-    { name: "Red Bean Mochi", image: "rB.jpg", weight: 210, quantity: 6, price: 4.25, originalPrice: 4.99, type: "tmL" },
-    { name: "Peanut Mochi", image: "pea.jpg", weight: 210, quantity: 6, price: 4.99, originalPrice: 4.99, type: "tmL" },
-    { name: "Green Tea Mochi", image: "greT.jpg", weight: 210, quantity: 6, price: 4.99, originalPrice: 4.99, type: "tmL" },
+    { name: "Sesame Mochi", image: "ses.jpg", weight: 210, quantity: 6, price: 3.99, originalPrice: 4.79, type: "tmL" },
+    { name: "Red Bean Mochi", image: "rB.jpg", weight: 210, quantity: 6, price: 3.99, originalPrice: 4.79, type: "tmL" },
+    { name: "Peanut Mochi", image: "pea.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
+    { name: "Green Tea Mochi", image: "greT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
 
     // Mini mochi
-    { name: "Mini Strawberry Mochi", image: "m-stra.jpg", weight: 80, quantity: 8, price: 2.79, originalPrice: 3.49, type: "tmS" },
-    { name: "Mini Mango Mochi", image: "m-man.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.49, type: "tmS" },
-    { name: "Mini Chocolate Mochi", image: "m-choc.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.49, type: "tmS" },
+    { name: "Mini Strawberry Mochi", image: "m-stra.jpg", weight: 80, quantity: 8, price: 2.79, originalPrice: 3.39, type: "tmS" },
+    { name: "Mini Mango Mochi", image: "m-man.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
+    { name: "Mini Chocolate Mochi", image: "m-choc.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
 
     // Deal
     {
