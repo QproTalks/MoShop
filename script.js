@@ -1,122 +1,144 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const addToCartButtons = document.querySelectorAll('.add-to-cart');
-  const priceElements = document.querySelectorAll('.price');
-  const weightElements = document.querySelectorAll('.weight')
+document.addEventListener('DOMContentLoaded', function () {
+  const productData = [
+    // Grote mochi
+    { name: "Sesame Mochi", image: "ses.jpg", weight: 210, quantity: 6, price: 4.25, originalPrice: 4.99, type: "tmL" },
+    { name: "Red Bean Mochi", image: "rB.jpg", weight: 210, quantity: 6, price: 4.25, originalPrice: 4.99, type: "tmL" },
+    { name: "Peanut Mochi", image: "pea.jpg", weight: 210, quantity: 6, price: 4.99, originalPrice: 4.99, type: "tmL" },
+    { name: "Green Tea Mochi", image: "greT.jpg", weight: 210, quantity: 6, price: 4.99, originalPrice: 4.99, type: "tmL" },
+
+    // Mini mochi
+    { name: "Mini Strawberry Mochi", image: "m-stra.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.49, type: "tmS" },
+    { name: "Mini Mango Mochi", image: "m-man.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.49, type: "tmS" },
+    { name: "Mini Chocolate Mochi", image: "m-choc.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 2.99, type: "tmS" },
+
+    // Deal
+    {
+      name: "Toki Mochi Deal",
+      image: ["ses.jpg", "rB.jpg", "pea.jpg", "m-mat.jpg", "m-man.jpg", "m-stra.jpg"],
+      weight: 870,
+      quantity: 6,
+      price: 15.99,
+      originalPrice: 22.34,
+      type: "deal"
+    }
+  ];
+
+  const cart = [];
   const cartItemsList = document.getElementById('cart-items');
   const cartTotal = document.getElementById('total');
   const checkoutButton = document.getElementById('checkout');
-  let cart = [];
 
-  // Event listeners toevoegen aan de knoppen om producten aan het winkelwagentje toe te voegen
-  addToCartButtons.forEach((button, index) => {
+  function renderProducts() {
+    productData.forEach(product => {
+      const containerId = product.type === "tmL" ? "tmL-container" :
+                          product.type === "tmS" ? "tmS-container" : "deal-container";
+
+      const container = document.getElementById(containerId);
+      const div = document.createElement('div');
+      div.className = product.originalPrice > product.price ? "saleproduct" : "product";
+
+      let images = Array.isArray(product.image)
+        ? product.image.map(img => `<img src="${img}" alt="${product.name}">`).join("")
+        : `<img src="${product.image}" alt="${product.name}">`;
+
+      div.innerHTML = `
+        ${images}
+        <h2 class="title">${product.name}</h2>
+        <h4 class="weight" data-weight="${product.weight}">${product.quantity} pieces (${product.weight}g)</h4>
+        ${product.originalPrice > product.price ? `<h3 class="original-price">€ ${product.originalPrice}</h3>` : ''}
+        <h3 class="price" data-price-eur="${product.price}" data-original-price-eur="${product.originalPrice}">€ ${product.price}</h3>
+        <button class="add-to-cart" data-product="${product.name}">Add to cart</button>
+      `;
+
+      container.appendChild(div);
+    });
+
+    // Knoppen activeren
+    document.querySelectorAll('.add-to-cart').forEach(button => {
       button.addEventListener('click', () => {
-          const productName = button.getAttribute('data-product');
-          const priceElement = priceElements[index];
-          const weightElement = weightElements[index];
-          const price = parseFloat(priceElement.getAttribute('data-price-eur'));
-          const originalPrice = priceElement ? parseFloat(priceElement.getAttribute('data-original-price-eur')) : price;
-          const weight = parseFloat(weightElement.getAttribute('data-weight'));
-          const existingItem = cart.find(item => item.product === productName);
+        const name = button.getAttribute('data-product');
+        const product = productData.find(p => p.name === name);
+        const existingItem = cart.find(i => i.product === name);
 
-          if (existingItem) {
-              existingItem.quantity++;
-          } else {
-              cart.push({ product: productName, price, originalPrice, quantity: 1, weight });
-          }
+        if (existingItem) {
+          existingItem.quantity++;
+        } else {
+          cart.push({ product: name, ...product, quantity: 1 });
+        }
 
-          updateCart();
+        updateCart();
       });
-  });
+    });
+  }
 
-  // Event listener toevoegen aan de checkout-knop
-  checkoutButton.addEventListener('click', () => {
-  let totalPrice = 0;
-  let noDiscountPrice = 0;
-  let productString = "|";
-  let totalWeight = 0;
+  function updateCart() {
+    cartItemsList.innerHTML = '';
+    let totalPrice = 0, noDiscountPrice = 0, totalWeight = 0;
 
-  cart.forEach(item => {
+    cart.forEach(item => {
       totalPrice += item.price * item.quantity;
       noDiscountPrice += item.originalPrice * item.quantity;
       totalWeight += item.weight * item.quantity;
-      productString += `${item.quantity}x ${item.product}|`;
+
+      const li = document.createElement('li');
+      li.textContent = `${item.product} - € ${formatCurrency(item.price * item.quantity)} (${item.quantity}x)${
+        item.price < item.originalPrice ? ` - Korting: € ${formatCurrency((item.originalPrice - item.price) * item.quantity)}` : ''
+      }`;
+      cartItemsList.appendChild(li);
+    });
+
+    const shippingPrice = determineShippingPrice(totalWeight);
+    totalPrice += shippingPrice;
+    noDiscountPrice += shippingPrice;
+
+    cartTotal.innerHTML = `
+      <p class="gray-text">Subtotal: € ${formatCurrency(noDiscountPrice - shippingPrice)}</p>
+      <p class="gray-text">Total Discount: € ${formatCurrency(noDiscountPrice - totalPrice)}</p>
+      <p class="gray-text">Total Price: € ${formatCurrency(totalPrice)}</p>
+      <p class="gray-text">Including € ${formatCurrency((totalPrice - shippingPrice) * 0.21)} Tax + Shipping: € ${formatCurrency(shippingPrice)}</p>
+    `;
+  }
+
+  checkoutButton.addEventListener('click', () => {
+    if (cart.length === 0) return;
+    let summary = "|";
+    let totalPrice = 0, noDiscountPrice = 0, totalWeight = 0;
+
+    cart.forEach(item => {
+      summary += `${item.quantity}x ${item.product}|`;
+      totalPrice += item.price * item.quantity;
+      noDiscountPrice += item.originalPrice * item.quantity;
+      totalWeight += item.weight * item.quantity;
+    });
+
+    const shipping = determineShippingPrice(totalWeight);
+    totalPrice += shipping;
+    noDiscountPrice += shipping;
+
+    const info = `Subtotal: € ${formatCurrency(noDiscountPrice)},
+Total Discount: € ${formatCurrency(noDiscountPrice - totalPrice)},
+Shipping: € ${formatCurrency(shipping)},
+Total: € ${formatCurrency(totalPrice)},
+Tax (21%): € ${formatCurrency(totalPrice * 0.21)},
+Products: ${summary}`;
+
+    alert("Thanks for buying!\n" + info);
+    cart.length = 0;
+    updateCart();
   });
 
-  let shippingPrice = determineShippingPrice(totalWeight);
-  noDiscountPrice += shippingPrice;
-  totalPrice += shippingPrice;
-
-  let info = `Subtotal: € ${formatCurrency(noDiscountPrice)},
-Total Discount: € ${formatCurrency(noDiscountPrice - totalPrice)},
-Shipping Price: € ${formatCurrency(shippingPrice)},
-Total Price: € ${formatCurrency(totalPrice)},
-Including € ${formatCurrency(totalPrice * 0.21)} Tax. Bought products: ${productString}`;
-
-  if (totalPrice > 0) {
-      alert(`Thanks for buying this. ${info}`);
-  }
-
-  cart = [];
-  updateCart();
-});
-
-  // Functie om de winkelwagen bij te werken
-  function updateCart() {
-      cartItemsList.innerHTML = '';
-      let totalPrice = 0;
-      let noDiscountPrice = 0;
-      let totalWeight = 0;
-
-      cart.forEach(item => {
-          const tPrice = parseFloat(priceElements[Array.from(addToCartButtons).findIndex(button => button.getAttribute('data-product') === item.product)].getAttribute('data-price-eur'));
-          const nDPrice = parseFloat(priceElements[Array.from(addToCartButtons).findIndex(button => button.getAttribute('data-product') === item.product)].getAttribute('data-original-price-eur'));
-          const weight = parseFloat(weightElements[Array.from(addToCartButtons).findIndex(button => button.getAttribute('data-product') === item.product)].getAttribute('data-weight'));
-          totalPrice += tPrice * item.quantity;
-          noDiscountPrice += nDPrice * item.quantity;
-          totalWeight += weight * item.quantity;
-          const li = document.createElement('li');
-          if (tPrice == nDPrice) {
-              li.textContent = `${item.product} - € ${formatCurrency(tPrice * item.quantity)} (${item.quantity}x)`;
-          } else {
-              li.textContent = `${item.product} - € ${formatCurrency(tPrice * item.quantity)} (${item.quantity}x)
-      - Korting: € ${formatCurrency((nDPrice - tPrice) * item.quantity)} (${item.quantity}x)`;
-          }
-
-          cartItemsList.appendChild(li);
-      });
-      const shippingPrice = determineShippingPrice(totalWeight);
-      totalPrice += shippingPrice;
-      noDiscountPrice += shippingPrice;
-
-      const subtotal = formatCurrency(noDiscountPrice - shippingPrice);
-      const discount = formatCurrency(noDiscountPrice - totalPrice);
-      const total = formatCurrency(totalPrice);
-      const tax = formatCurrency((totalPrice - shippingPrice) * 0.21);
-      const shipping = formatCurrency(shippingPrice);
-      // Bijwerken van tekst in plaats van een alert
-      cartTotal.innerHTML = `
-  <p class="gray-text">Subtotal: € ${subtotal}</p>
-  <p class="gray-text">Total Discount: € ${discount}</p>
-  <p class="gray-text">Total Price: € ${total}</p>
-  <p class="gray-text">Including € ${tax} Tax + Shipping: € ${shipping}</p>
-`;
-
-  }
-
-  // Functie om valuta op de juiste manier te formatteren
   function formatCurrency(amount) {
-      return amount.toFixed(2).replace('.', ','); // Aanpassen aan de lokale valuta-notatie indien nodig
-  };
+    return amount.toFixed(2).replace('.', ',');
+  }
 
-  function determineShippingPrice(amount) {
-      if (amount < 1) { return 0.00; }
-      if (amount < 3001) { return 5.95; }
-      if (amount < 10001) { return 6.95; }
-      if (amount < 23001) { return 13.90; }
-      if (amount > 23000) { return (Math.floor(amount / 23000) * 13.90); }
-  };
+  function determineShippingPrice(weight) {
+    if (weight < 1) return 0.00;
+    if (weight < 3001) return 5.95;
+    if (weight < 10001) return 6.95;
+    if (weight < 23001) return 13.90;
+    return (Math.floor(weight / 23000) * 13.90);
+  }
 
-
-  // Direct na het laden van de pagina wordt de winkelwagen bijgewerkt
+  renderProducts();
   updateCart();
 });
