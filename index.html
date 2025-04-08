@@ -1,116 +1,34 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoShop</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoShop</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Banner -->
-    <div class="banner">
-        <h1>Welcome to Mo-Shop</h1>
-        <h2>The place where you can buy your delicious mochi! We have a lot of flavours!</h2>
-    </div>
+  <!-- Banner -->
+  <div class="banner">
+    <h1>Welcome to Mo-Shop</h1>
+    <h2>The place where you can buy your delicious mochi!</h2>
+  </div>
 
-    <div id="tmL-container" class="product-row">
-        <!-- Producten -->
-        <div class="saleproduct">
-            <img src="ses.jpg" alt="Sesame Mochi">
-            <h2 class="title">Sesame Mochi</h2>
-            <h4 class="weight" data-weight="210">6 pieces (210g)</h4>
-            <h3 class="original-price">€ 4.99</h3>   
-            <h3 class="price" data-price-eur="4.25" data-original-price-eur="4.99">€ 4.25</h3>
-            <button class="add-to-cart" data-product="Sesame Mochi">Add to cart</button>
-        </div>
-        <div class="saleproduct">
-    <img src="rB.jpg" alt="Red Bean Mochi">
-    <h2 class="title">Red Bean Mochi</h2>
-    <h4 class="weight" data-weight="210">6 pieces (210g)</h4>
-    <h3 class="original-price">€ 4.99</h3>
-    <h3 class="price" data-price-eur="4.25" data-original-price-eur="4.99">€ 4.25</h3>
-    <button class="add-to-cart" data-product="Red Bean Mochi">Add to cart</button>
-</div>
+  <div class="banner"><h2>Tokimeki Large Mochi ⬇</h2></div>
+  <div id="tmL-container" class="product-row"></div>
 
+  <div class="banner"><h2>Tokimeki Mini Mochi ⬇</h2></div>
+  <div id="tmS-container" class="product-row"></div>
 
-<div class="product">
-    <img src="pea.jpg" alt="Peanut Mochi">
-    <h2 class="title">Peanut Mochi</h2>
-    <h4 class="weight" data-weight="210">6 pieces (210g)</h4>
-    <h3 class="price" data-price-eur="4.99" data-original-price-eur="4.99">€ 4.99</h3>
-    <button class="add-to-cart" data-product="Peanut Mochi">Add to cart</button>
-</div>
+  <div class="banner">
+    <h2>Special Deals ⬇</h2>
+    <p>Our best 6 packs Mochi for only 15.99!</p>
+  </div>
+  <div id="deal-container" class="product-row"></div>
 
-<div class="product">
-    <img src="greT.jpg" alt="Green Tea Mochi">
-    <h2 class="title">Green Tea Mochi</h2>
-    <h4 class="weight" data-weight="210">6 pieces (210g)</h4>
-    <h3 class="price" data-price-eur="4.99" data-original-price-eur="4.99">€ 4.99</h3>
-    <button class="add-to-cart" data-product="Peanut Mochi">Add to cart</button>
-</div>
-    </div>
+  <ul id="cart-items"></ul>
+  <p id="total"></p>
+  <button id="checkout" class="afrekenen">Afrekenen</button>
 
-<!-- Add banner here -->
-<div class="banner">
-    <h2>Tokimeki Mini Mochi ⬇</h2>
-</div>
-
-<div id="tmS-container" class="product-row">
-    <div class="saleproduct">
-        <img src="m-stra.jpg" alt="Mini Strawberry Mochi">
-        <h2 class="title">Mini Strawberry Mochi</h2>
-        <h4 class="weight" data-weight="80">8 pieces (80g)</h4>
-        <h3 class="original-price">€ 3.49</h3>
-        <h3 class="price" data-price-eur="2.99" data-original-price-eur="3.49">€ 2.99</h3>
-        <button class="add-to-cart" data-product="Mini Strawberry Mochi">Add to cart</button>
-    </div>
-
-    <div class="saleproduct">
-        <img src="m-man.jpg" alt="Mini Mango Mochi">
-        <h2 class="title">Mini Mango Mochi</h2>
-        <h4 class="weight" data-weight="80">8 pieces (80g)</h4>
-        <h3 class="original-price">€ 3.49</h3>
-        <h3 class="price" data-price-eur="2.99" data-original-price-eur="3.49">€ 2.99</h3>
-        <button class="add-to-cart" data-product="Mini Mango Mochi">Add to cart</button>
-    </div>
-
-    <div class="saleproduct">
-        <img src="m-choc.jpg" alt="Mini Chocolate Mochi">
-        <h2 class="title">Mini Chocolate Mochi</h2>
-        <h4 class="weight" data-weight="80">8 pieces (80g)</h4>
-        <h3 class="original-price">€ 2.99</h3>
-        <h3 class="price" data-price-eur="2.99" data-original-price-eur="3.49">€ 2.99</h3>
-        <button class="add-to-cart" data-product="Mini Chocolate Mochi">Add to cart</button>
-    </div>
-</div>
-    </div>
-
-    <div class="banner">
-        <h2>Special Deals ⬇</h2>
-        <p>Our best 6 packs Mochi for only 15.99! </p>
-    </div>
-    <div id="deal-container" class="product-row">
-        <div class="deal">
-            <img src="ses.jpg" alt="Sesame Mochi">
-            <img src="rB.jpg" alt="Red Bean Mochi">
-            <img src="pea.jpg" alt="Peanut Mochi">
-            <img src="m-mat.jpg" alt="Mini Matcha Mochi">
-            <img src="m-man.jpg" alt="Mini Mango Mochi">
-            <img src="m-stra.jpg" alt="Mini Strawberry Mochi">
-            <h2 class="title">Toki Mochi Deal: The Best Mochi in 1 pack!</h2>
-            <h4 class="weight" data-weight="870" >3x 210g + 3x 80g = 870g!</h4>
-            <h3 class="original-price">€ 22.34</h3>
-            <h3 class="price" data-price-eur="15.99" data-original-price-eur="22.34">€ 15.99!</h3>
-            <button class="add-to-cart" data-product="Toki Mochi Deal">Add to cart</button>
-        </div>
-    </div>
-    <ul id="cart-items"></ul>
-    <p id="total"></p>
-
-    <button id="checkout" class="afrekenen">Afrekenen</button>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
