@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   const productData = [
   // Grote mochi
+  { name: "Brown Sugar and Red Bean Mochi", image: "bS+rB.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "s" },
+  { name: "Bubble Tea Mochi", image: "bubT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "s" },
+  { name: "Custard White Peach Mochi", image: "c-wP.jpg", weight: 168, quantity: 6, price: 4.79, originalPrice: 4.79, type: "s" },
   { name: "Custard Lemon Mochi", image: "c-lem.jpg", weight: 168, quantity: 6, price: 4.79, type: "tmL" },
   { name: "Green Tea Mochi", image: "greT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
   { name: "Milk Tea, Matcha and Brown Sugar Mochi Mix", image: "mil+mat+bS.jpg", weight: 510, quantity: 6, price: 8.49, originalPrice: 9.99, type: "tmL" },
@@ -18,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
   { name: "Mini Matcha Mochi", image: "m-mat.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
   { name: "Mini Marshmallow Strawberry Mochi", image: "m-ma+str.jpg", weight: 80, quantity: 8, price: 2.79, originalPrice: 3.39, type: "tmS" },
   { name: "Mini Strawberry Mochi", image: "m-stra.jpg", weight: 80, quantity: 8, price: 2.79, originalPrice: 3.39, type: "tmS" },
+    
     // Deal
     {
       name: "Toki Mochi Deal",
@@ -42,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function renderProducts() {
     productData.forEach(product => {
       const containerId = product.type === "tmL" ? "tmL-container" :
-                          product.type === "tmS" ? "tmS-container" : "deal-container";
+                          product.type === "tmS" ? "tmS-container" :
+                          product.type === "deal" ? "deal-container" : 
 
       const container = document.getElementById(containerId);
       const div = document.createElement('div');
