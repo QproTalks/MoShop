@@ -1,10 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const productData = [
   // Grote mochi
-  { name: "Brown Sugar and Red Bean Mochi", image: "bS+rB.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "sssss" },
-  { name: "Bubble Tea Mochi", image: "bubT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "sssss" },
-  { name: "Custard Lemon Mochi", image: "c-lem.jpg", weight: 168, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
-  { name: "Custard White Peach Mochi", image: "c-wP.jpg", weight: 168, quantity: 6, price: 4.79, originalPrice: 4.79, type: "sssss" },
+  { name: "Custard Lemon Mochi", image: "c-lem.jpg", weight: 168, quantity: 6, price: 4.79, type: "tmL" },
   { name: "Green Tea Mochi", image: "greT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
   { name: "Milk Tea, Matcha and Brown Sugar Mochi Mix", image: "mil+mat+bS.jpg", weight: 510, quantity: 6, price: 8.49, originalPrice: 9.99, type: "tmL" },
   { name: "Peanut Mochi", image: "pea.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
@@ -32,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
       type: "deal"
     }
   ];
+
+  //{ name: "Brown Sugar and Red Bean Mochi", image: "bS+rB.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "sssss" },
+  //{ name: "Bubble Tea Mochi", image: "bubT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "sssss" },
+  //{ name: "Custard White Peach Mochi", image: "c-wP.jpg", weight: 168, quantity: 6, price: 4.79, originalPrice: 4.79, type: "sssss" },
 
   const cart = [];
   const cartItemsList = document.getElementById('cart-items');
