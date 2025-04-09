@@ -107,7 +107,8 @@ document.addEventListener('DOMContentLoaded', function () {
       <p class="gray-text">Subtotal: € ${formatCurrency(noDiscountPrice - shippingPrice)}</p>
       <p class="gray-text">Total Discount: € ${formatCurrency(noDiscountPrice - totalPrice)}</p>
       <p class="gray-text">Total Price: € ${formatCurrency(totalPrice)}</p>
-      <p class="gray-text">Including € ${formatCurrency((totalPrice - shippingPrice) * 0.21)} Tax + Shipping: € ${formatCurrency(shippingPrice)}</p>
+      <p class="gray-text">Shipping: € ${formatCurrency(shippingPrice)}</p>
+      <p class="gray-text">Including € ${formatCurrency((totalPrice - shippingPrice) * 0.21)} Tax</p>
     `;
   }
 
@@ -131,10 +132,10 @@ document.addEventListener('DOMContentLoaded', function () {
 Total Discount: € ${formatCurrency(noDiscountPrice - totalPrice)},
 Shipping: € ${formatCurrency(shipping)},
 Total: € ${formatCurrency(totalPrice)},
-Tax (21%): € ${formatCurrency(totalPrice * 0.21)},
+Tax (9%): € ${formatCurrency(totalPrice * 0.09)},
 Products: ${summary}`;
 
-    alert("Thanks for buying!\n" + info);
+    alert("Thanks for placing a order! Order:\n" + info);
     cart.length = 0;
     updateCart();
   });
