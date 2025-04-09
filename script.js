@@ -34,10 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   ];
 
-  //{ name: "Brown Sugar and Red Bean Mochi", image: "bS+rB.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "sssss" },
-  //{ name: "Bubble Tea Mochi", image: "bubT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "sssss" },
-  //{ name: "Custard White Peach Mochi", image: "c-wP.jpg", weight: 168, quantity: 6, price: 4.79, originalPrice: 4.79, type: "sssss" },
-
   const cart = [];
   const cartItemsList = document.getElementById('cart-items');
   const cartTotal = document.getElementById('total');
@@ -99,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const li = document.createElement('li');
       li.textContent = `${item.product} - € ${formatCurrency(item.price * item.quantity)} (${item.quantity}x)${
-        item.price < item.originalPrice ? ` - Korting: € ${formatCurrency((item.originalPrice - item.price) * item.quantity)}` : ''
+        item.price < item.originalPrice ? ` - Discount: € ${formatCurrency((item.originalPrice - item.price) * item.quantity)}` : ''
       }`;
       cartItemsList.appendChild(li);
     });
