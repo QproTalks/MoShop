@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     productData.forEach(product => {
       const containerId = product.type === "tmL" ? "tmL-container" :
                           product.type === "tmS" ? "tmS-container" :
-                          product.type === "deal" ? "deal-container" : 
+                          product.type === "deal" ? "deal-container" : ""
 
       const container = document.getElementById(containerId);
       const div = document.createElement('div');
