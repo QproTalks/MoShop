@@ -3,23 +3,23 @@ document.addEventListener('DOMContentLoaded', function () {
   // Grote mochi
   //{ name: "Brown Sugar and Red Bean Mochi", image: "bS+rB.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "s" },
   //{ name: "Bubble Tea Mochi", image: "bubT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "s" },
-  //{ name: "Custard White Peach Mochi", image: "c-wP.jpg", weight: 168, quantity: 6, price: 4.79, originalPrice: 4.79, type: "s" },
+  { name: "Custard White Peach Mochi", image: "c-wP.jpg", weight: 168, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
   { name: "Custard Lemon Mochi", image: "c-lem.jpg", weight: 168, quantity: 6, price: 4.79, type: "tmL" },
   { name: "Green Tea Mochi", image: "greT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
-  { name: "Milk Tea, Matcha and Brown Sugar Mochi Mix", image: "mil+mat+bS.jpg", weight: 510, quantity: 6, price: 8.49, originalPrice: 9.99, type: "tmL" },
   { name: "Peanut Mochi", image: "pea.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
   { name: "Red Bean Mochi", image: "rB.jpg", weight: 210, quantity: 6, price: 3.99, originalPrice: 4.79, type: "tmL" },
   { name: "Sesame Mochi", image: "ses.jpg", weight: 210, quantity: 6, price: 3.99, originalPrice: 4.79, type: "tmL" },
   { name: "Tiramisu Mochi", image: "tms.jpg", weight: 210, quantity: 6, price: 3.99, originalPrice: 4.79, type: "tmL" },
 
   // Mini mochi
-  { name: "Mini Chestnut Mochi", image: "m-kas.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
-  { name: "Mini Cherry Blossom Mochi", image: "m-kB.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
+  { name: "Milk Tea, Matcha and Brown Sugar Mini Mochi Mix", image: "mil+mat+bS.jpg", weight: 510, quantity: "?", price: 8.49, originalPrice: 9.99, type: "tmL" },
+  { name: "Mini Chestnut Mochi", image: "m-kas.jpg", weight: 120, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
+  { name: "Mini Cherry Blossom Mochi", image: "m-kB.jpg", weight: 120, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
   { name: "Mini Chocolate Mochi", image: "m-choc.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
   { name: "Mini Chocolate Banana Mochi", image: "m-ch+bn.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
   { name: "Mini Mango Mochi", image: "m-man.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
   { name: "Mini Matcha Mochi", image: "m-mat.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
-  { name: "Mini Marshmallow Strawberry Mochi", image: "m-ma+str.jpg", weight: 80, quantity: 8, price: 2.79, originalPrice: 3.39, type: "tmS" },
+  { name: "Mini Marshmallow Strawberry Mochi", image: "m-ma+str.jpg", weight: 120, quantity: 8, price: 2.79, originalPrice: 3.39, type: "tmS" },
   { name: "Mini Strawberry Mochi", image: "m-stra.jpg", weight: 80, quantity: 8, price: 2.79, originalPrice: 3.39, type: "tmS" },
     
     // Deal
