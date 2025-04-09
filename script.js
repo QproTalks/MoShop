@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
   const productData = [
   // Grote mochi
-  { name: "Brown Sugar and Red Bean Mochi", image: "bS+rB.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "soldout" },
-  { name: "Bubble Tea Mochi", image: "bubT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "soldout" },
-  { name: "Citrus Lemon Mochi", image: "c-lem.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
-  { name: "Coconut with Peanut Mochi", image: "c-wP.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
+  { name: "Brown Sugar and Red Bean Mochi", image: "bS+rB.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "sssss" },
+  { name: "Bubble Tea Mochi", image: "bubT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "sssss" },
+  { name: "Custard Lemon Mochi", image: "c-lem.jpg", weight: 168, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
+  { name: "Custard White Peach Mochi", image: "c-wP.jpg", weight: 168, quantity: 6, price: 4.79, originalPrice: 4.79, type: "sssss" },
   { name: "Green Tea Mochi", image: "greT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
-  { name: "Milk Matcha & Brown Sugar Mochi", image: "mil+mat+bS.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
+  { name: "Milk Tea, Matcha and Brown Sugar Mochi Mix", image: "mil+mat+bS.jpg", weight: 510, quantity: 6, price: 8.49, originalPrice: 9.99, type: "tmL" },
   { name: "Peanut Mochi", image: "pea.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
   { name: "Red Bean Mochi", image: "rB.jpg", weight: 210, quantity: 6, price: 3.99, originalPrice: 4.79, type: "tmL" },
   { name: "Sesame Mochi", image: "ses.jpg", weight: 210, quantity: 6, price: 3.99, originalPrice: 4.79, type: "tmL" },
-  { name: "Taro Mochi Snacks", image: "tms.jpg", weight: 210, quantity: 6, price: 3.99, originalPrice: 4.79, type: "tmL" },
+  { name: "Tiramisu Mochi", image: "tms.jpg", weight: 210, quantity: 6, price: 3.99, originalPrice: 4.79, type: "tmL" },
 
   // Mini mochi
   { name: "Mini Chestnut Mochi", image: "m-kas.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
