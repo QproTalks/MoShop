@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
   { name: "Mini Mango Mochi", image: "m-man.jpg", weight: 80, price: 2.99, originalPrice: 3.49, type: "tmS" },
   { name: "Mini Matcha Mochi", image: "m-mat.jpg", weight: 80, price: 2.99, originalPrice: 3.49, type: "tmS" },
   { name: "Mini Marshmallow Strawberry Mochi", image: "m-ma+str.jpg", weight: 120, price: 3.49, originalPrice: 4.49, type: "tmS" },
-  { name: "Mini Strawberry Mochi", image: "m-stra.jpg", weight: 80, price: 2.99, originalPrice: 3.49, type: "tmS" }
+  { name: "Mini Strawberry Mochi", image: "m-stra.jpg", weight: 80, price: 2.99, originalPrice: 3.49, type: "tmS" },
 
     
     // Deal
