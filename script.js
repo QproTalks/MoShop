@@ -1,33 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
   const productData = [
-  // Grote mochi
-  //{ name: "Brown Sugar and Red Bean Mochi", image: "bS+rB.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "s" },
-  //{ name: "Bubble Tea Mochi", image: "bubT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "s" },
-  { name: "Custard White Peach Mochi", image: "c-wP.jpg", weight: 168, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
-  { name: "Custard Lemon Mochi", image: "c-lem.jpg", weight: 168, quantity: 6, price: 4.79, type: "tmL" },
-  { name: "Green Tea Mochi", image: "greT.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
-  { name: "Peanut Mochi", image: "pea.jpg", weight: 210, quantity: 6, price: 4.79, originalPrice: 4.79, type: "tmL" },
-  { name: "Red Bean Mochi", image: "rB.jpg", weight: 210, quantity: 6, price: 3.99, originalPrice: 4.79, type: "tmL" },
-  { name: "Sesame Mochi", image: "ses.jpg", weight: 210, quantity: 6, price: 3.99, originalPrice: 4.79, type: "tmL" },
-  { name: "Tiramisu Mochi", image: "tms.jpg", weight: 210, quantity: 6, price: 3.99, originalPrice: 4.79, type: "tmL" },
+  //{ name: "Brown Sugar and Red Bean Mochi", image: "bS+rB.jpg", weight: 210, price: 4.99, originalPrice: 4.99, type: "s" },
+  //{ name: "Bubble Tea Mochi", image: "bubT.jpg", weight: 210, price: 4.99, originalPrice: 4.99, type: "s" },
+  { name: "Custard White Peach Mochi", image: "c-wP.jpg", weight: 168, price: 3.99, originalPrice: 4.49, type: "tmL" },
+  { name: "Custard Lemon Mochi", image: "c-lem.jpg", weight: 168, price: 3.99, originalPrice: 4.49, type: "tmL" },
+  { name: "Green Tea Mochi", image: "greT.jpg", weight: 210, price: 4.99, originalPrice: 4.99, type: "tmL" },
+  { name: "Peanut Mochi", image: "pea.jpg", weight: 210, price: 4.99, originalPrice: 4.99, type: "tmL" },
+  { name: "Red Bean Mochi", image: "rB.jpg", weight: 210, price: 3.99, originalPrice: 4.99, type: "tmL" },
+  { name: "Sesame Mochi", image: "ses.jpg", weight: 210, price: 3.99, originalPrice: 4.99, type: "tmL" },
+  { name: "Tiramisu Mochi", image: "tms.jpg", weight: 210, price: 3.49, originalPrice: 3.99, type: "tmL" },
 
   // Mini mochi
-  { name: "Milk Tea, Matcha and Brown Sugar Mini Mochi Mix", image: "mil+mat+bS.jpg", weight: 510, quantity: "?", price: 8.49, originalPrice: 9.99, type: "tmL" },
-  { name: "Mini Chestnut Mochi", image: "m-kas.jpg", weight: 120, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
-  { name: "Mini Cherry Blossom Mochi", image: "m-kB.jpg", weight: 120, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
-  { name: "Mini Chocolate Mochi", image: "m-choc.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
-  { name: "Mini Chocolate Banana Mochi", image: "m-ch+bn.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
-  { name: "Mini Mango Mochi", image: "m-man.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
-  { name: "Mini Matcha Mochi", image: "m-mat.jpg", weight: 80, quantity: 8, price: 2.99, originalPrice: 3.59, type: "tmS" },
-  { name: "Mini Marshmallow Strawberry Mochi", image: "m-ma+str.jpg", weight: 120, quantity: 8, price: 2.79, originalPrice: 3.39, type: "tmS" },
-  { name: "Mini Strawberry Mochi", image: "m-stra.jpg", weight: 80, quantity: 8, price: 2.79, originalPrice: 3.39, type: "tmS" },
+  { name: "Milk Tea, Matcha and Brown Sugar Mini Mochi Mix", image: "mil+mat+bS.jpg", weight: 510, price: 7.49, originalPrice: 8.99, type: "tmL" },
+  { name: "Mini Chestnut Mochi", image: "m-kas.jpg", weight: 120, price: 3.49, originalPrice: 4.49, type: "tmS" },
+  { name: "Mini Cherry Blossom Mochi", image: "m-kB.jpg", weight: 120, price: 3.49, originalPrice: 4.49, type: "tmS" },
+  { name: "Mini Chocolate Mochi", image: "m-choc.jpg", weight: 80, price: 2.99, originalPrice: 3.49, type: "tmS" },
+  { name: "Mini Chocolate Banana Mochi", image: "m-ch+bn.jpg", weight: 80, price: 4.49, originalPrice: 5.49, type: "tmS" },
+  { name: "Mini Mango Mochi", image: "m-man.jpg", weight: 80, price: 2.99, originalPrice: 3.49, type: "tmS" },
+  { name: "Mini Matcha Mochi", image: "m-mat.jpg", weight: 80, price: 2.99, originalPrice: 3.49, type: "tmS" },
+  { name: "Mini Marshmallow Strawberry Mochi", image: "m-ma+str.jpg", weight: 120, price: 3.49, originalPrice: 4.49, type: "tmS" },
+  { name: "Mini Strawberry Mochi", image: "m-stra.jpg", weight: 80, price: 2.99, originalPrice: 3.49, type: "tmS" }
+
     
     // Deal
     {
       name: "Toki Mochi Deal",
       image: ["ses.jpg", "rB.jpg", "greT.jpg", "m-choc.jpg", "m-man.jpg", "m-stra.jpg"],
       weight: 870,
-      quantity: 6,
       price: 19.99,
       originalPrice: 24.94,
       type: "deal"
@@ -55,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
       div.innerHTML = `
       ${images}
       <h2 class="title">${product.name}</h2>
-      <h4 class="weight" data-weight="${product.weight}">${product.quantity} pieces (${product.weight}g)</h4>
+      <h4 class="weight" data-weight="${product.weight}">(${product.weight}g)</h4>
       ${product.originalPrice > product.price ? `<h3 class="original-price">€ ${product.originalPrice}</h3>` : ''}
       <h3 class="price" data-price-eur="${product.price}" data-original-price-eur="${product.originalPrice}">€ ${product.price}</h3>
       <button class="add-to-cart" data-product="${product.name}">Add to cart</button>
