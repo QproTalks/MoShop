@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       name: "Fruity Pack",
-      image: ["c-wP.jpg", "c-lem.jpg", "m-stra.jpg", "m-man.jpg", "m-ma+str", "m-sei"],
+      image: ["c-wP.jpg", "c-lem.jpg", "m-stra.jpg", "m-man.jpg", "m-ma+str.jpg", "m-sei.jpg"],
       weight: 840,
       price: 20.99,
       originalPrice: 26.44,
