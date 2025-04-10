@@ -20,17 +20,35 @@ document.addEventListener('DOMContentLoaded', function () {
   { name: "Mini Matcha Mochi", image: "m-mat.jpg", weight: 80, price: 2.99, originalPrice: 3.49, type: "tmS" },
   { name: "Mini Marshmallow Strawberry Mochi", image: "m-ma+str.jpg", weight: 120, price: 3.49, originalPrice: 4.49, type: "tmS" },
   { name: "Mini Strawberry Mochi", image: "m-stra.jpg", weight: 80, price: 2.99, originalPrice: 3.49, type: "tmS" },
+  { name: "Mini Seiki Orange Mochi", image: "m-sei.jpg", weight: 130, price: 5.25, originalPrice: 5.99, type: "tmS" },
 
     
     // Deal
     {
-      name: "Toki Mochi Deal",
-      image: ["ses.jpg", "rB.jpg", "greT.jpg", "m-choc.jpg", "m-man.jpg", "m-stra.jpg"],
-      weight: 870,
-      price: 19.99,
-      originalPrice: 24.94,
+      name: "Special Goodness",
+      image: ["tms.jpg", "m-ch+bn.jpg", "m-ma+str.jpg", "m-kB.jpg", "m-kas.jpg", "m-stra.jpg", "m-sei.jpg"],
+      weight: 770,
+      price: 21.99,
+      originalPrice: 28.94,
       type: "deal"
-    }
+    },
+    {
+      name: "Daifuku Pack",
+      image: ["greT.jpg", "ses.jpg", "pea.jpg", "rB.jpg"],
+      weight: 840,
+      price: 15.49,
+      originalPrice: 19.96,
+      type: "deal"
+    },
+    {
+      name: "Fruity Pack",
+      image: ["c-wP.jpg", "c-lem.jpg", "m-stra.jpg", "m-man.jpg", "m-ma+str", "m-sei"],
+      weight: 840,
+      price: 20.99,
+      originalPrice: 26.44,
+      type: "deal"
+    },
+    
   ];
 
   const cart = [];
