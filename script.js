@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
   { name: "Peanut Mochi", image: "pea.jpg", weight: 210, price: 4.99, originalPrice: 4.99, type: "tmL" },
   { name: "Red Bean Mochi", image: "rB.jpg", weight: 210, price: 3.99, originalPrice: 4.99, type: "tmL" },
   { name: "Sesame Mochi", image: "ses.jpg", weight: 210, price: 3.99, originalPrice: 4.99, type: "tmL" },
-  { name: "Tiramisu Mochi", image: "tms.jpg", weight: 210, price: 3.49, originalPrice: 3.99, type: "tmL" },
+  { name: "Tiramisu Mochi", image: "tms.jpg", weight: 120, price: 3.49, originalPrice: 3.99, type: "tmL" },
 
   // Mini mochi
   { name: "Milk Tea, Matcha and Brown Sugar Mini Mochi Mix", image: "mil+mat+bS.jpg", weight: 510, price: 7.49, originalPrice: 8.99, type: "tmL" },
