@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <p class="gray-text">Total Discount: € ${formatCurrency(noDiscountPrice - totalPrice)}</p>
       <p class="gray-text">Total Price: € ${formatCurrency(totalPrice)}</p>
       <p class="gray-text">Shipping: € ${formatCurrency(shippingPrice)}</p>
-      <p class="gray-text">Including € ${formatCurrency((totalPrice - shippingPrice) * 0.21)} Tax</p>
+      <p class="gray-text">Including € ${formatCurrency((totalPrice - shippingPrice) * 0.09)} Tax</p>
     `;
   }
 
