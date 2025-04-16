@@ -66,21 +66,23 @@ document.addEventListener('DOMContentLoaded', function() {
             productCard.dataset.category = category;
             
             productCard.innerHTML = `
-                <img src="img/${image}" alt="${name}" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-title">${name}</h3>
-                    <p class="product-weight">${weight}g</p>
-                    <div class="product-price">
-                        <span class="current-price">€${price.toFixed(2)}</span>
-                        <span class="original-price">€${originalPrice.toFixed(2)}</span>
-                        ${discount > 0 ? `<span class="discount">${discount}% OFF</span>` : ''}
-                    </div>
-                    <button class="add-to-cart" data-id="${name}">Add to Cart</button>
-                </div>
-            `;
-            
-            productsGrid.appendChild(productCard);
-        });
+    <div class="product-image-container">
+        <img src="${window.location.hostname.includes('github.io') ? '/your-repo-name' : ''}/img/${image}" 
+             alt="${name}" 
+             class="product-image"
+             onerror="this.onerror=null;this.src='${window.location.hostname.includes('github.io') ? '/your-repo-name' : ''}/img/placeholder.jpg'">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">${name}</h3>
+        <p class="product-weight">${weight}g</p>
+        <div class="product-price">
+            <span class="current-price">$${price.toFixed(2)}</span>
+            <span class="original-price">$${originalPrice.toFixed(2)}</span>
+            ${discount > 0 ? `<span class="discount">${discount}% OFF</span>` : ''}
+        </div>
+        <button class="add-to-cart" data-id="${name}">Add to Cart</button>
+    </div>
+`;
     }
 
     // Render deals with improved image grid
@@ -95,18 +97,23 @@ document.addEventListener('DOMContentLoaded', function() {
             dealCard.className = 'deal-card';
             
             dealCard.innerHTML = `
-                <img src="img/${image}" alt="${name}" class="deal-image">
-                <div class="deal-info">
-                    <h3 class="deal-title">${name}</h3>
-                    <p class="deal-weight">${weight}g</p>
-                    <div class="deal-price">
-                        <span class="current-price">€${price.toFixed(2)}</span>
-                        <span class="original-price">€${originalPrice.toFixed(2)}</span>
-                        ${discount > 0 ? `<span class="discount">${discount}% OFF</span>` : ''}
-                    </div>
-                    <button class="add-to-cart" data-id="${name}">Add to Cart</button>
-                </div>
-            `;
+    <div class="deal-image-container">
+        <img src="${window.location.hostname.includes('github.io') ? '/your-repo-name' : ''}/img/${image}" 
+             alt="${name}" 
+             class="deal-image"
+             onerror="this.onerror=null;this.src='${window.location.hostname.includes('github.io') ? '/your-repo-name' : ''}/img/deal-placeholder.jpg'">
+    </div>
+    <div class="deal-info">
+        <h3 class="deal-title">${name}</h3>
+        <p class="deal-weight">${weight}g</p>
+        <div class="deal-price">
+            <span class="current-price">$${price.toFixed(2)}</span>
+            <span class="original-price">$${originalPrice.toFixed(2)}</span>
+            ${discount > 0 ? `<span class="discount">${discount}% OFF</span>` : ''}
+        </div>
+        <button class="add-to-cart" data-id="${name}">Add to Cart</button>
+    </div>
+`;
             
             dealsGrid.appendChild(dealCard);
         });
