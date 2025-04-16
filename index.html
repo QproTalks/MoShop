@@ -1,30 +1,80 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mochi Shop</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Delights</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="banner">
-    <h1>Welkom bij de Mochi Shop!</h1>
-    <p>Kies je favoriete mochi-categorie</p>
-  </header>
+    <header>
+        <div class="logo">Mochi Delights</div>
+        <nav>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#deals">Special Deals</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">🛒 <span class="cart-count">0</span></div>
+    </header>
 
-  <main class="overview-grid">
-    <a href="daifuku.html" class="category-card">
-      <h2>Daifuku</h2>
-    </a>
-    <a href="minifruit.html" class="category-card">
-      <h2>Mini Fruit</h2>
-    </a>
-    <a href="specials.html" class="category-card">
-      <h2>Specials</h2>
-    </a>
-    <a href="custard.html" class="category-card">
-      <h2>Custard</h2>
-    </a>
-  </main>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Authentic Japanese Mochi</h1>
+                <p>Soft, chewy, and bursting with flavor</p>
+                <button class="cta-button">Shop Now</button>
+            </div>
+        </section>
+
+        <section id="products" class="products-section">
+            <h2>Our Mochi Selection</h2>
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="cst">Custard</button>
+                <button class="filter-btn" data-category="dfk">Daifuku</button>
+                <button class="filter-btn" data-category="clas">Classic</button>
+                <button class="filter-btn" data-category="spec">Special</button>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be inserted here by JavaScript -->
+            </div>
+        </section>
+
+        <section id="deals" class="deals-section">
+            <h2>Special Deals</h2>
+            <div class="deals-grid" id="deals-grid">
+                <!-- Deals will be inserted here by JavaScript -->
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>About Our Mochi</h2>
+            <p>We craft authentic Japanese mochi using traditional techniques with a modern twist. Each piece is made with premium ingredients for the perfect chewy texture and balanced flavors.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Mochi Delights. All rights reserved.</p>
+    </footer>
+
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <span class="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be inserted here -->
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">€0.00</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
